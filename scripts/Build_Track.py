@@ -25,8 +25,12 @@ def random_track(width):
     # fancy plotting
     print_track(p_x,p_y,x_intpol,y_intpol)
     
-def custom_track(P):
-    pass 
+def custom_track(xy):
+    x,y = list(zip(*xy)) # unzip
+
+    x_intpol, y_intpol = catmull_rom(x, y, RES)
+
+    print_track(x,y,x_intpol,y_intpol) 
 
 def print_track(p_x,p_y,x_intpol,y_intpol):
     # append first point to end to close loop
@@ -41,3 +45,4 @@ def print_track(p_x,p_y,x_intpol,y_intpol):
 
 if __name__ == "__main__":
     random_track(10)
+    # custom_track([(0,2),(1,3),(2,2),(3,4),(2,5),(0.5,4)])
