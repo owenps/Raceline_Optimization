@@ -7,7 +7,7 @@ import numpy as np
 #   interval)
 RES = 50
 
-def random_track(track_len, show=False):
+def random_track(track_len:int, show=False):
     half_len = track_len // 2
 
     track_bottom_x = np.arange(1,half_len,dtype='float32')
