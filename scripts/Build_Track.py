@@ -7,7 +7,7 @@ import numpy as np
 #   interval)
 RES = 50
 
-def random_track(track_len, show=True):
+def random_track(track_len, show=False):
     half_len = track_len // 2
 
     track_bottom_x = np.arange(1,half_len,dtype='float32')
@@ -23,7 +23,7 @@ def random_track(track_len, show=True):
     return custom_track(zip(p_x,p_y), show)
 
     
-def custom_track(xy, show=True):
+def custom_track(xy, show=False):
     x,y = list(zip(*xy)) # unzip
 
     # do the catmull-rom to compute center line
@@ -64,5 +64,5 @@ def print_track(p_x,p_y,x_intpol,y_intpol):
     plt.show()
 
 if __name__ == "__main__":
-    track = random_track(20)
+    track = random_track(20, show=True)
     # custom_track([(0,2),(1,3),(2,2),(3,4),(2,5),(0.5,4)])
