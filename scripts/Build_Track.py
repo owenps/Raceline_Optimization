@@ -1,4 +1,4 @@
-from Catmull_Rom_Splines import catmull_rom
+from catmull_rom_splines import catmull_rom
 import matplotlib.pyplot as plt
 import numpy as np
 
